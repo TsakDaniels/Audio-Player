@@ -139,3 +139,20 @@ body {
     width: 0%;
     transition: width 0.1 linear;
 }
+
+.parent {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+  }
+
+  .child {
+    display: inline-block;
+    
+  }
+
+  .sidebar {
+    background-color:aliceblue;
+    height: 100%;
+    align-items: left;
+    justify-content: left;
+  }
