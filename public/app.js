@@ -24,3 +24,5 @@ auth.onAuthStateChanged(user => {
         userDetails.innerHTML = '';
     }
 });
+
+
