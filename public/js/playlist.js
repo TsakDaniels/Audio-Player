@@ -22,7 +22,7 @@ function hereComesTheSun() {
   x6 = 0;
 }
 
-function whatsMyAgeAgain() {
+ function whatsMyAgeAgain() {
   if (x2 === 0) {
     loadSong(songs[1]);
     playSong();
@@ -38,7 +38,7 @@ function whatsMyAgeAgain() {
   x6 = 0;
 }
 
-function hush() {
+ function hush() {
   if (x3 === 0) {
     loadSong(songs[2]);
     playSong();
@@ -103,4 +103,4 @@ function jackass() {
     x3 = 0;
     x4 = 0;
     x5 = 0;
-  }
+  } 

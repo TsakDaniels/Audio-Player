@@ -11,8 +11,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="/public/style.css">
-    <link rel="stylesheet" href="/public/sidebar.css">
+    <link rel="stylesheet" href="/public/css/sidebar.css">
+    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="/public/css/slider.css">
+
 
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
@@ -46,10 +48,10 @@ import { initializeApp } from "firebase/app";
 </head>
 
 <body>
-    
-    
 
-   
+
+
+
     <div id="mySidebar" class="sidebar">
         <a href="#" id="songs"></a>
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
@@ -62,14 +64,15 @@ import { initializeApp } from "firebase/app";
     </div>
 
     <div id="main">
-        
-        
 
-        <h1 class="neonText">MyMusicApp</h1>
+
+        <img id="logo" src="./images/pngegg.png" alt="logo" >
+        <h1 class="neonText">Limewire Lite </h1>
+        
 
         <div class="music-container">
             <div class="music-info">
-                <h4 id="title">Test</h4>
+                <h4 id="title"></h4>
                 <div class="progress-container">
                     <div class="progress"></div>
                 </div>
@@ -90,33 +93,31 @@ import { initializeApp } from "firebase/app";
                 <button id="next" class="action-btn">
                     <i class="fas fa-forward"></i>
                 </button>
+
+               <input type="range" min="0" max="100" value="50" id="volume-control"> 
+              
+               
             </div>
-        </div> 
+        </div>
+
+
         <button class="openbtn" onclick="openNav();">Playlist</button>
-        <button class="lightMode" onclick="lightMode()">Light Mode</button>
-    <section id="whenSignedOut">
-        <div id="test"></div>
-        <button id="signInBtn">Sign in with Google</button>
-    </section>
+        <button id="btntext" class="lightMode" onclick="lightMode()">Light Mode</button>
+        <section id="whenSignedOut">
+            <div id="test"></div>
+            <button id="signInBtn">Sign in with Google</button>
+        </section>
 
-    <section id="whenSignedIn" hidden="true">
-        <div id="userDetails"></div>
-        <button id="signOutBtn">Sign Out</button>
-    </section>
-
-    
-    
+        <section id="whenSignedIn" hidden="true">
+            <div id="userDetails"></div>
+            <button id="signOutBtn">Sign Out</button>
+        </section>
     </div>
 
-    
-
-
-    
-    
-
-
     <script src="./script.js"></script>
-    <script src="./playlist.js"></script>
+    <script src="./js/playlist.js"></script>
+   
+    <script src="./js/auth.js"></script>
 </body>
 
 </html>

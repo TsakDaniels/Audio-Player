@@ -1,3 +1,4 @@
+
 const musicContainer = document.querySelector(".music-container");
 const playBtn = document.querySelector("#play");
 const prevBtn = document.querySelector("#prev");
@@ -10,7 +11,7 @@ const cover = document.querySelector("#cover");
 
 //Song titles
 
-const songs = ["song1", "song2", "song3", "song4", "song5", "song6"];
+const songs = ["Here comes the sun", "What's my age again", "Hush", "Jackass", "Hurricane", "Black black heart"];
 //document.getElementById("songs").innerHTML = songs;
 
 //keep track of songs
@@ -21,10 +22,14 @@ loadSong(songs[songIndex]);
 
 //update song details
 function loadSong(song) {
+
   title.innerText = song;
+  
   audio.src = `music/${song}.mp3`;
   cover.src = `images/${song}.jpg`;
 }
+
+$("#title").css("color","rgb(100,100,100)");
 
 function playSong() {
   musicContainer.classList.add("play");
@@ -93,6 +98,8 @@ progressContainer.addEventListener("click", setProgress);
 
 audio.addEventListener("ended", nextSong);
 
+
+
 nav = 0;
 
 function openNav() {
@@ -127,16 +134,24 @@ function lightMode() {
     $("#userDetails").css("background-color", " #ccffbc")
     $("#userDetails").css("border", "none")
     $("#userDetails").css("color", "rgb(55, 206, 55)")
+    document.getElementById("btntext").innerHTML = "Dark Mode";
     dm = 1;
   } else {
-    $("body").css("background-color", "#202020");
+    $("body").css("background-color", "#141414");
     $(".sidebar").css("background-color", "rgba(90, 90, 90, 0.203)");
     //$(".sidebar a").css("color", "#b8ff9a");
     $(".music-container").css("background-color", "rgba(134, 228, 106, 0.839)");
     $(".neonText").css("color", "rgb(23, 79, 20)");
     $("#userDetails").css("background-color", "#282828")
     $("#userDetails").css("color", "rgb(55, 206, 55)")
-    
+    document.getElementById("btntext").innerHTML = "Light Mode";
     dm = 0;
   }
 }
+
+//VOLUME CHANGE
+let volume = document.querySelector("#volume-control");
+volume.addEventListener("change", function(e) {
+audio.volume = e.currentTarget.value / 100;
+})
+
